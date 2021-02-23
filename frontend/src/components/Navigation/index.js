@@ -9,6 +9,8 @@ import './Navigation.css';
 function Navigation({ isLoaded }) {
     const sessionUser = useSelector(state => state.session.user);
 
+    console.log(sessionUser);
+
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
@@ -18,18 +20,25 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <LoginFormModal />
-                <NavLink to="/signup">Sign Up</NavLink>
+                <NavLink to="/signup">
+                    <button type="button" className="nav-btn" id="signup-btn">Sign Up</button>
+                </NavLink>
             </>
         );
     }
 
     return (
-        <ul>
-            <li>
-                <NavLink exact to="/">Home</NavLink>
+        <div className="navbar">
+            <NavLink exact to="/" className="nav-div">
+                <div className="nav-home">
+                    <span className="scotty-text">ScottySmith</span>
+                    <div className="horse-logo"></div>
+                </div>
+            </NavLink>
+            <div className="login-signup">
                 {isLoaded && sessionLinks}
-            </li>
-        </ul>
+            </div>
+        </div>
     );
 }
 
