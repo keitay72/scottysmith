@@ -27,5 +27,37 @@
 }
 
 .login-btn:hover {
-	color:#5cbf2a;
+	color:#6A3E39;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+	justify-content: space-around;
+	
+	height: 15em;
+	width: 25em;
+
+}
+
+#modal-content {
+	border-radius: 5px;
+}
+
+#login-btn {
+	width: 12em;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.username {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.password {
+	margin-left: auto;
+	margin-right: auto;
 }
