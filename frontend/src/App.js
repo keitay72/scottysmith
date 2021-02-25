@@ -6,6 +6,9 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
+import WatchList from "./components/WatchList";
+import StockGraph from "./components/StockGraph";
+import StockNews from "./components/StockNews";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -42,7 +45,9 @@ function App() {
         {isLoaded && (
           <Switch>
             <Route path="/" exact>
-              <h2>Signed In Homepage</h2>
+              <StockGraph />
+              <WatchList />
+              <StockNews />
             </Route>
             <Route path="/signup">
               <SignupFormPage />
