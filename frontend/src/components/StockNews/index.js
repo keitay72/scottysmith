@@ -23,8 +23,8 @@ const newsData = {
 // console.log(newsData.symbols)
 
 const currentdate = new Date();
-const datetime = "Last Sync: " + currentdate.getDay() + "/" + currentdate.getMonth()
-    + "/" + currentdate.getFullYear() + " @ "
+const datetime = currentdate.getFullYear() + "-" + currentdate.getMonth()
+    + "-" + currentdate.getDay() + "T"
     + currentdate.getHours() + ":"
     + currentdate.getMinutes() + ":" + currentdate.getSeconds();
 

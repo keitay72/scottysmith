@@ -8,7 +8,7 @@ function WatchList() {
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2">Watch List</th>
+                        <th colSpan="2">Watch List</th>
                     </tr>
                 </thead>
                 <tbody>

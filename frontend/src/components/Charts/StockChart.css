@@ -1,0 +1,10 @@
+.graph-container {
+    height: 500px;
+    width: 800px;
+    /* background-color: blue; */
+}
+
+.response-container {
+    height: 100%;
+    width: 100%;
+}

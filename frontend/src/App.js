@@ -9,6 +9,8 @@ import SplashPage from "./components/SplashPage";
 import WatchList from "./components/WatchList";
 import StockGraph from "./components/StockGraph";
 import StockNews from "./components/StockNews";
+import StockDetailPage from "./components/StockDetailPage";
+import ImRich from "./components/ImRich";
 
 function App() {
   const sessionUser = useSelector(state => state.session.user);
@@ -48,9 +50,14 @@ function App() {
               <StockGraph />
               <WatchList />
               <StockNews />
+              <ImRich />
             </Route>
             <Route path="/signup">
               <SignupFormPage />
+            </Route>
+            <Route path="/stocks/:symbol">
+              <StockDetailPage />
+              <WatchList />
             </Route>
           </Switch>
         )}

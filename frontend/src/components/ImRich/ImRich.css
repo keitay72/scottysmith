@@ -1,0 +1,24 @@
+
+.money-bag-div {
+    /* background-color: pink; */
+    display: inline-block;
+    overflow: hidden;
+    height: 200px;
+    width: 100%;
+}
+
+.money-bag-image {
+    background-image: url(../../images/money-bag.png);
+    height: 100px;
+    width: 100px;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.money-bag-image:hover {
+    background-color: blue;
+}
+
+.money-bag-image:active {
+    transform: translateY(5px);
+}
