@@ -1,11 +1,18 @@
 const UPDATE_LIST = 'stock/UPDATE_LIST';
 const GET_LINE_DATA = 'stock/GET_LINE_DATA';
 const ADD_LINE_DATA = 'stock/ADD_LINE_DATA';
+const ADD_NEWS = 'stock/ADD_NEWS';
 
 const addLines = (symbol, lineData) => ({
     type: ADD_LINE_DATA,
     symbol,
     lineData,
+});
+
+const addNews = (symbol, news) => ({
+    type: ADD_NEWS,
+    symbol,
+    news,
 });
 
 const updateList = list => ({
@@ -17,6 +24,14 @@ const loadLines = (symbol, lineData) => ({
     type: GET_LINE_DATA,
     symbol,
 });
+
+export const getStockNews = symbol => async dispatch => {
+    const response = await fetch(`/api/news/${symbol}`);
+    if (response.ok) {
+        const news = await response.json();
+        dispatch(addNews(symbol, news));
+    }
+};
 
 export const getLineDataByList = list => async dispatch => {
     const symbols = list.join(',')
@@ -64,6 +79,7 @@ const stockReducer = (state = initialState, action) => {
                 stocks: {
                     ...state.stocks,
                     [action.symbol]: {
+                        ...state.stocks[action.symbol],
                         lineData: action.lineData,
                         time: Date.now(),
                     },
@@ -74,6 +90,18 @@ const stockReducer = (state = initialState, action) => {
             return {
                 ...state,
                 watchlist: action.list,
+            }
+        }
+        case ADD_NEWS: {
+            return {
+                ...state,
+                stocks: {
+                    ...state.stocks,
+                    [action.symbol]: {
+                        ...state.stocks[action.symbol],
+                        news: action.news
+                    }
+                }
             }
         }
         default:

@@ -1,11 +1,11 @@
 .sn_container {
-    /* background-image: url("../../images/lightning_icon.png");
-    background-size: cover;
-    height: 50px;
-    width: 50px; */
-    border: 1px solid black;
-    /* text-decoration: none; */
-    /* height: 200px; */
+    height: 150px;
+    margin: 1em;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.sn_container:hover {
+    background-color: whitesmoke;
 }
 
 .lightning_icon {
@@ -22,13 +22,29 @@
 }
 
 .news_img {
-    border: 1px solid red;
-    background-size: cover;
-    height: 100px;
-    width: 100px;
+    /* border: 1px solid red; */
+    /* background-size: cover; */
+    height: 100%;
+    width: 150px;
+    object-fit: cover;
 }
 
 .news_link {
+    display: flex;
     text-decoration: none;
     color: black;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* .source {
+    text-decoration: none;
+} */
+
+.news_link {
+    text-decoration: none;
+}
+
+.news-div {
+    padding-bottom: 16px;
 }

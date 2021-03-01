@@ -4,6 +4,9 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const chartsRouter = require('./charts.js');
 const infoRouter = require('./info');
+const newsRouter = require('./news');
+
+router.use('/news', newsRouter);
 
 router.use('/info', infoRouter);
 

@@ -7,7 +7,6 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import WatchList from "./components/WatchList";
-import StockGraph from "./components/StockGraph";
 import StockNews from "./components/StockNews";
 import StockDetailPage from "./components/StockDetailPage";
 import ImRich from "./components/ImRich";
@@ -47,9 +46,6 @@ function App() {
         {isLoaded && (
           <Switch>
             <Route path="/" exact>
-              <StockGraph />
-              <WatchList />
-              <StockNews />
               <ImRich />
             </Route>
             <Route path="/signup">
@@ -57,7 +53,7 @@ function App() {
             </Route>
             <Route path="/stocks/:symbol">
               <StockDetailPage />
-              <WatchList />
+              {/* <WatchList /> */}
             </Route>
           </Switch>
         )}
